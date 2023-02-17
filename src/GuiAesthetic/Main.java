@@ -28,10 +28,23 @@ public class Main extends javax.swing.JFrame {
 
         CRUDFrame = new javax.swing.JFrame();
         PanelCrud = new javax.swing.JPanel();
-        TabbedDeOkis = new javax.swing.JTabbedPane();
+        CrearLaptop = new javax.swing.JTabbedPane();
         CrearTp = new javax.swing.JPanel();
+        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        Ip = new javax.swing.JTextField();
+        mascara = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        host = new javax.swing.JTextField();
+        jLabel5 = new javax.swing.JLabel();
+        marca = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        pantalla = new javax.swing.JTextField();
+        targetagrafica = new javax.swing.JCheckBox();
+        CreandoLaptop = new javax.swing.JButton();
         ListarTP = new javax.swing.JPanel();
         EliminarTP = new javax.swing.JPanel();
+        jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         MenuPanelPrincipal = new javax.swing.JPanel();
         MenuTextito = new javax.swing.JLabel();
@@ -42,22 +55,105 @@ public class Main extends javax.swing.JFrame {
         PanelCrud.setBackground(new java.awt.Color(0, 37, 125));
         PanelCrud.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        TabbedDeOkis.setBackground(new java.awt.Color(0, 0, 102));
+        CrearLaptop.setBackground(new java.awt.Color(0, 0, 102));
 
         CrearTp.setBackground(new java.awt.Color(0, 0, 102));
+
+        jLabel2.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel2.setText("Ingrese la mascara");
+
+        jLabel3.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel3.setText("Ingrese la IP");
+
+        jLabel4.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel4.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel4.setText("Ingrese el host");
+
+        jLabel5.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel5.setText("Ingrese la marca");
+
+        jLabel6.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel6.setForeground(new java.awt.Color(204, 204, 204));
+        jLabel6.setText("Ingrese la def. pantalla");
+
+        targetagrafica.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
+        targetagrafica.setText("Targeta Grafica");
+        targetagrafica.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                targetagraficaActionPerformed(evt);
+            }
+        });
+
+        CreandoLaptop.setText("Crear");
+        CreandoLaptop.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CreandoLaptopMouseClicked(evt);
+            }
+        });
+        CreandoLaptop.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                CreandoLaptopActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout CrearTpLayout = new javax.swing.GroupLayout(CrearTp);
         CrearTp.setLayout(CrearTpLayout);
         CrearTpLayout.setHorizontalGroup(
             CrearTpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGroup(CrearTpLayout.createSequentialGroup()
+                .addGap(16, 16, 16)
+                .addGroup(CrearTpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(marca, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(host, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mascara, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(Ip, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
+                .addGroup(CrearTpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(pantalla, javax.swing.GroupLayout.DEFAULT_SIZE, 165, Short.MAX_VALUE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(targetagrafica, javax.swing.GroupLayout.PREFERRED_SIZE, 138, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(CreandoLaptop, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addGap(85, 85, 85))
         );
         CrearTpLayout.setVerticalGroup(
             CrearTpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 229, Short.MAX_VALUE)
+            .addGroup(CrearTpLayout.createSequentialGroup()
+                .addGap(9, 9, 9)
+                .addGroup(CrearTpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CrearTpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(Ip, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(pantalla, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CrearTpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(mascara, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(targetagrafica, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(CrearTpLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addGroup(CrearTpLayout.createSequentialGroup()
+                        .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(host, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(marca, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(CreandoLaptop, javax.swing.GroupLayout.PREFERRED_SIZE, 59, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(50, Short.MAX_VALUE))
         );
 
-        TabbedDeOkis.addTab("Crear", CrearTp);
+        CrearLaptop.addTab("Crear Laptop", CrearTp);
 
         ListarTP.setBackground(new java.awt.Color(0, 0, 102));
 
@@ -65,14 +161,14 @@ public class Main extends javax.swing.JFrame {
         ListarTP.setLayout(ListarTPLayout);
         ListarTPLayout.setHorizontalGroup(
             ListarTPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGap(0, 460, Short.MAX_VALUE)
         );
         ListarTPLayout.setVerticalGroup(
             ListarTPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 229, Short.MAX_VALUE)
+            .addGap(0, 349, Short.MAX_VALUE)
         );
 
-        TabbedDeOkis.addTab("Listar", ListarTP);
+        CrearLaptop.addTab("Listar", ListarTP);
 
         EliminarTP.setBackground(new java.awt.Color(0, 0, 102));
 
@@ -80,31 +176,46 @@ public class Main extends javax.swing.JFrame {
         EliminarTP.setLayout(EliminarTPLayout);
         EliminarTPLayout.setHorizontalGroup(
             EliminarTPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 350, Short.MAX_VALUE)
+            .addGap(0, 460, Short.MAX_VALUE)
         );
         EliminarTPLayout.setVerticalGroup(
             EliminarTPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 229, Short.MAX_VALUE)
+            .addGap(0, 349, Short.MAX_VALUE)
         );
 
-        TabbedDeOkis.addTab("Eliminar", EliminarTP);
+        CrearLaptop.addTab("Eliminar", EliminarTP);
 
-        PanelCrud.add(TabbedDeOkis, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 350, 260));
+        jPanel1.setBackground(new java.awt.Color(0, 0, 102));
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 460, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 349, Short.MAX_VALUE)
+        );
+
+        CrearLaptop.addTab("Crear  PC Escritorio", jPanel1);
+
+        PanelCrud.add(CrearLaptop, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, 460, 380));
 
         jLabel1.setFont(new java.awt.Font("Arial Black", 0, 36)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(204, 204, 204));
         jLabel1.setText("CRUD");
-        PanelCrud.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 20, -1, -1));
+        PanelCrud.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 20, -1, -1));
 
         javax.swing.GroupLayout CRUDFrameLayout = new javax.swing.GroupLayout(CRUDFrame.getContentPane());
         CRUDFrame.getContentPane().setLayout(CRUDFrameLayout);
         CRUDFrameLayout.setHorizontalGroup(
             CRUDFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelCrud, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(PanelCrud, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
         CRUDFrameLayout.setVerticalGroup(
             CRUDFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelCrud, javax.swing.GroupLayout.DEFAULT_SIZE, 400, Short.MAX_VALUE)
+            .addComponent(PanelCrud, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -165,6 +276,18 @@ public class Main extends javax.swing.JFrame {
         CRUDFrame.pack();
     }//GEN-LAST:event_CRUDMouseClicked
 
+    private void targetagraficaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_targetagraficaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_targetagraficaActionPerformed
+
+    private void CreandoLaptopMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CreandoLaptopMouseClicked
+        // TODO add your handling code here:
+    }//GEN-LAST:event_CreandoLaptopMouseClicked
+
+    private void CreandoLaptopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreandoLaptopActionPerformed
+        
+    }//GEN-LAST:event_CreandoLaptopActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -203,15 +326,28 @@ public class Main extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton CRUD;
     private javax.swing.JFrame CRUDFrame;
+    private javax.swing.JButton CreandoLaptop;
+    private javax.swing.JTabbedPane CrearLaptop;
     private javax.swing.JPanel CrearTp;
     private javax.swing.JPanel EliminarTP;
+    private javax.swing.JTextField Ip;
     private javax.swing.JPanel ListarTP;
     private javax.swing.JPanel MenuPanelPrincipal;
     private javax.swing.JLabel MenuTextito;
     private javax.swing.JPanel PanelCrud;
-    private javax.swing.JTabbedPane TabbedDeOkis;
+    private javax.swing.JTextField host;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextField marca;
+    private javax.swing.JTextField mascara;
+    private javax.swing.JTextField pantalla;
+    private javax.swing.JCheckBox targetagrafica;
     // End of variables declaration//GEN-END:variables
 }

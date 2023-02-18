@@ -529,6 +529,7 @@ static Scanner lea = new Scanner(System.in);
 
     private void TGraficaEscriActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TGraficaEscriActionPerformed
         // TODO add your handling code here:
+        
     }//GEN-LAST:event_TGraficaEscriActionPerformed
 
     private void CrearEscritorioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CrearEscritorioMouseClicked
@@ -543,6 +544,13 @@ static Scanner lea = new Scanner(System.in);
         
         Escritorio escritorio = new Escritorio (ips,mascarass,hostings,capaRam,capaAlm,tipoAlm,tarjetaG);
         computadoras.add(escritorio);
+        
+        IpE.setText("");
+        mascaraE.setText("");
+        hostE.setText("");
+        capRam.setText("");
+        capAlma.setText("");
+        tipoAlma.setText("");
         
     }//GEN-LAST:event_CrearEscritorioMouseClicked
 

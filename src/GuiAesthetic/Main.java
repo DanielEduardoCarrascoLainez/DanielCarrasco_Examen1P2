@@ -4,17 +4,20 @@
  */
 package GuiAesthetic;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author Daniel
  */
 public class Main extends javax.swing.JFrame {
-
+ArrayList computadoras = new ArrayList();
     /**
      * Creates new form Main
      */
     public Main() {
         initComponents();
+        
     }
 
     /**
@@ -43,6 +46,8 @@ public class Main extends javax.swing.JFrame {
         targetagrafica = new javax.swing.JCheckBox();
         CreandoLaptop = new javax.swing.JButton();
         ListarTP = new javax.swing.JPanel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        listitaCRUD = new javax.swing.JTextArea();
         EliminarTP = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -56,6 +61,11 @@ public class Main extends javax.swing.JFrame {
         PanelCrud.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         CrearLaptop.setBackground(new java.awt.Color(0, 0, 102));
+        CrearLaptop.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                CrearLaptopStateChanged(evt);
+            }
+        });
 
         CrearTp.setBackground(new java.awt.Color(0, 0, 102));
 
@@ -157,15 +167,21 @@ public class Main extends javax.swing.JFrame {
 
         ListarTP.setBackground(new java.awt.Color(0, 0, 102));
 
+        listitaCRUD.setColumns(20);
+        listitaCRUD.setRows(5);
+        jScrollPane1.setViewportView(listitaCRUD);
+
         javax.swing.GroupLayout ListarTPLayout = new javax.swing.GroupLayout(ListarTP);
         ListarTP.setLayout(ListarTPLayout);
         ListarTPLayout.setHorizontalGroup(
             ListarTPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 460, Short.MAX_VALUE)
         );
         ListarTPLayout.setVerticalGroup(
             ListarTPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 349, Short.MAX_VALUE)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, ListarTPLayout.createSequentialGroup()
+                .addGap(0, 22, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         CrearLaptop.addTab("Listar", ListarTP);
@@ -211,11 +227,11 @@ public class Main extends javax.swing.JFrame {
         CRUDFrame.getContentPane().setLayout(CRUDFrameLayout);
         CRUDFrameLayout.setHorizontalGroup(
             CRUDFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelCrud, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(PanelCrud, javax.swing.GroupLayout.DEFAULT_SIZE, 531, Short.MAX_VALUE)
         );
         CRUDFrameLayout.setVerticalGroup(
             CRUDFrameLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(PanelCrud, javax.swing.GroupLayout.DEFAULT_SIZE, 500, Short.MAX_VALUE)
+            .addComponent(PanelCrud, javax.swing.GroupLayout.DEFAULT_SIZE, 533, Short.MAX_VALUE)
         );
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -285,8 +301,28 @@ public class Main extends javax.swing.JFrame {
     }//GEN-LAST:event_CreandoLaptopMouseClicked
 
     private void CreandoLaptopActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CreandoLaptopActionPerformed
+        String ip= Ip.getText();
+        String mascaras= mascara.getText();
+        String hosting= host.getText();
+        String marcas= marca.getText();
+        String definicion= pantalla.getText();
+        boolean tarjeta= targetagrafica.isSelected();
         
+        Laptop laptopCompu= new Laptop(ip,mascaras,hosting,marcas,definicion,tarjeta);
+        computadoras.add(laptopCompu);
+        
+        Ip.setText("");
+        mascara.setText("");
+        host.setText("");
+        marca.setText("");
+        pantalla.setText("");
     }//GEN-LAST:event_CreandoLaptopActionPerformed
+
+    private void CrearLaptopStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_CrearLaptopStateChanged
+        if (CrearLaptop.getSelectedIndex() == 2){
+            listitaCRUD.se
+        }
+    }//GEN-LAST:event_CrearLaptopStateChanged
 
     /**
      * @param args the command line arguments
@@ -344,7 +380,9 @@ public class Main extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JTextArea listitaCRUD;
     private javax.swing.JTextField marca;
     private javax.swing.JTextField mascara;
     private javax.swing.JTextField pantalla;

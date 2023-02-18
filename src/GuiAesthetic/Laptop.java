@@ -9,7 +9,7 @@ public class Laptop extends PC{
     private String defPantalla;
     private boolean RGB;
 
-    public Laptop(String Ip, String Mascara, String hosting) {
+    public Laptop(String Ip, String Mascara, String hosting, String marcas, String definicion, boolean tarjeta) {
         super(Ip, Mascara, hosting);
     }
 

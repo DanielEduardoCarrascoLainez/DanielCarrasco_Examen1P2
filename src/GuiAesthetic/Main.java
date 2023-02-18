@@ -50,6 +50,7 @@ ArrayList computadoras = new ArrayList();
         listitaCRUD = new javax.swing.JTextArea();
         EliminarTP = new javax.swing.JPanel();
         BotonEliminar = new javax.swing.JButton();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         MenuPanelPrincipal = new javax.swing.JPanel();
@@ -198,21 +199,27 @@ ArrayList computadoras = new ArrayList();
             }
         });
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+
         javax.swing.GroupLayout EliminarTPLayout = new javax.swing.GroupLayout(EliminarTP);
         EliminarTP.setLayout(EliminarTPLayout);
         EliminarTPLayout.setHorizontalGroup(
             EliminarTPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EliminarTPLayout.createSequentialGroup()
                 .addGap(105, 105, 105)
-                .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(EliminarTPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(BotonEliminar, javax.swing.GroupLayout.DEFAULT_SIZE, 250, Short.MAX_VALUE))
                 .addContainerGap(105, Short.MAX_VALUE))
         );
         EliminarTPLayout.setVerticalGroup(
             EliminarTPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(EliminarTPLayout.createSequentialGroup()
-                .addGap(123, 123, 123)
+                .addGap(23, 23, 23)
+                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 166, Short.MAX_VALUE)
                 .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(152, Short.MAX_VALUE))
+                .addGap(35, 35, 35))
         );
 
         CrearLaptop.addTab("Eliminar", EliminarTP);
@@ -398,6 +405,7 @@ ArrayList computadoras = new ArrayList();
     private javax.swing.JPanel PanelCrud;
     private javax.swing.JTextField host;
     private javax.swing.JButton jButton1;
+    private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

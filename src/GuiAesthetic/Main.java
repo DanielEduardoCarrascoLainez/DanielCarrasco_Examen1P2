@@ -319,8 +319,12 @@ ArrayList computadoras = new ArrayList();
     }//GEN-LAST:event_CreandoLaptopActionPerformed
 
     private void CrearLaptopStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_CrearLaptopStateChanged
-        if (CrearLaptop.getSelectedIndex() == 2){
-            listitaCRUD.se
+        //Esto es para listar
+        if (CrearLaptop.getSelectedIndex() == 1){
+            listitaCRUD.setText("");
+            for (Object Compus: computadoras) {
+                listitaCRUD.append(" "+computadoras.indexOf(Compus)+"-. "+Compus+"\n");
+            }
         }
     }//GEN-LAST:event_CrearLaptopStateChanged
 

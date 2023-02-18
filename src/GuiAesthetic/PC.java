@@ -45,8 +45,8 @@ public class PC {
     @Override
     public String toString() {
         return "PC hosting: " + hosting + 
-                "Ip:" + Ip + 
-                "Mascara:" + Mascara + '}';
+                " Ip:" + Ip + 
+                " Mascara:" + Mascara;
     }
     
     

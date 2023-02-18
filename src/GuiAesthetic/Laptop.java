@@ -9,7 +9,7 @@ public class Laptop extends PC{
     private String defPantalla;
     private boolean RGB;
 
-    public Laptop(String Ip, String Mascara, String hosting, String marcas, String definicion, boolean tarjeta) {
+    public Laptop(String Ip, String Mascara, String hosting, String marca, String defPantalla, boolean RGB) {
         super(Ip, Mascara, hosting);
     }
 
@@ -46,10 +46,10 @@ public class Laptop extends PC{
 
     @Override
     public String toString() {
-        return "Laptop" + 
+        return super.toString()+ "Laptop" + 
                 "Marca: " + marca + 
                 "Definicion de la pantalla: " + defPantalla + 
-                "RGB: " + RGB + '}';
+                "RGB: " + RGB;
     }
     
     

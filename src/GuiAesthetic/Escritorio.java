@@ -10,7 +10,7 @@ public class Escritorio extends PC{
     private String tipoAlmacenamiento;
     private boolean targetaGraf;
 
-    public Escritorio(String Ip, String Mascara, String hosting, String capaRam, String capaAlm, String tipoAlm, boolean tarjetaG) {
+    public Escritorio(String Ip, String Mascara, String hosting, String RAMcapacidad, String capacidadAlmacenamiento, String tipoAlmacenamiento, boolean targetaGraf) {
         super(Ip, Mascara, hosting);
     }
 
@@ -56,11 +56,11 @@ public class Escritorio extends PC{
 
     @Override
     public String toString() {
-        return "Escritorio" + 
+        return super.toString()+ "Escritorio" + 
                 "RAMcapacidad: " + RAMcapacidad + 
                 "CapacidadAlmacenamiento:" + capacidadAlmacenamiento + 
                 "TipoAlmacenamiento=" + tipoAlmacenamiento + 
-                "TargetaGraf=" + targetaGraf + '}';
+                "TargetaGraf=" + targetaGraf;
     }
     
     

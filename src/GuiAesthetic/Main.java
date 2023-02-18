@@ -244,23 +244,30 @@ static Scanner lea = new Scanner(System.in);
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
 
         jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel7.setForeground(new java.awt.Color(204, 204, 204));
         jLabel7.setText("Ingrese la mascara");
 
         jLabel8.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel8.setForeground(new java.awt.Color(204, 204, 204));
         jLabel8.setText("Ingrese la IP");
 
         jLabel9.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(204, 204, 204));
         jLabel9.setText("Ingrese el host");
 
         jLabel10.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel10.setForeground(new java.awt.Color(204, 204, 204));
         jLabel10.setText("Ingrese la capacidad RAM");
 
         jLabel11.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel11.setForeground(new java.awt.Color(204, 204, 204));
         jLabel11.setText("Capacidad Almacenamiento");
 
         jLabel12.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel12.setForeground(new java.awt.Color(204, 204, 204));
         jLabel12.setText("Tipo de Almacenamiento");
 
+        TGraficaEscri.setForeground(new java.awt.Color(204, 204, 204));
         TGraficaEscri.setText("Tarjeta grafica");
         TGraficaEscri.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -551,6 +558,8 @@ static Scanner lea = new Scanner(System.in);
         capRam.setText("");
         capAlma.setText("");
         tipoAlma.setText("");
+        
+        
         
     }//GEN-LAST:event_CrearEscritorioMouseClicked
 

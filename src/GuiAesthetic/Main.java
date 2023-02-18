@@ -5,6 +5,7 @@
 package GuiAesthetic;
 
 import java.util.ArrayList;
+import javax.swing.DefaultComboBoxModel;
 
 /**
  *
@@ -339,6 +340,13 @@ ArrayList computadoras = new ArrayList();
         host.setText("");
         marca.setText("");
         pantalla.setText("");
+        
+        DefaultComboBoxModel m = new DefaultComboBoxModel();
+        jComboBox1.setModel(m);
+        for (Object comp : computadoras) {
+            m.addElement(comp);
+        }
+        jComboBox1.setModel(m);
     }//GEN-LAST:event_CreandoLaptopActionPerformed
 
     private void CrearLaptopStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_CrearLaptopStateChanged
@@ -353,6 +361,13 @@ ArrayList computadoras = new ArrayList();
 
     private void BotonEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonEliminarMouseClicked
         //Esto es para borrar
+        computadoras.remove((Object) (jComboBox1.getSelectedItem()));
+        DefaultComboBoxModel m = new DefaultComboBoxModel();
+        jComboBox1.setModel(m);
+        for (Object comp : computadoras) {
+            m.addElement(comp);
+        }
+        jComboBox1.setModel(m);
     }//GEN-LAST:event_BotonEliminarMouseClicked
 
     /**

@@ -49,6 +49,7 @@ ArrayList computadoras = new ArrayList();
         jScrollPane1 = new javax.swing.JScrollPane();
         listitaCRUD = new javax.swing.JTextArea();
         EliminarTP = new javax.swing.JPanel();
+        BotonEliminar = new javax.swing.JButton();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         MenuPanelPrincipal = new javax.swing.JPanel();
@@ -188,15 +189,30 @@ ArrayList computadoras = new ArrayList();
 
         EliminarTP.setBackground(new java.awt.Color(0, 0, 102));
 
+        BotonEliminar.setBackground(new java.awt.Color(204, 0, 0));
+        BotonEliminar.setFont(new java.awt.Font("Arial Black", 0, 24)); // NOI18N
+        BotonEliminar.setText("Eliminar");
+        BotonEliminar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BotonEliminarMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout EliminarTPLayout = new javax.swing.GroupLayout(EliminarTP);
         EliminarTP.setLayout(EliminarTPLayout);
         EliminarTPLayout.setHorizontalGroup(
             EliminarTPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGroup(EliminarTPLayout.createSequentialGroup()
+                .addGap(105, 105, 105)
+                .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(105, Short.MAX_VALUE))
         );
         EliminarTPLayout.setVerticalGroup(
             EliminarTPLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 349, Short.MAX_VALUE)
+            .addGroup(EliminarTPLayout.createSequentialGroup()
+                .addGap(123, 123, 123)
+                .addComponent(BotonEliminar, javax.swing.GroupLayout.PREFERRED_SIZE, 74, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(152, Short.MAX_VALUE))
         );
 
         CrearLaptop.addTab("Eliminar", EliminarTP);
@@ -328,6 +344,10 @@ ArrayList computadoras = new ArrayList();
         }
     }//GEN-LAST:event_CrearLaptopStateChanged
 
+    private void BotonEliminarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BotonEliminarMouseClicked
+        //Esto es para borrar
+    }//GEN-LAST:event_BotonEliminarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -364,6 +384,7 @@ ArrayList computadoras = new ArrayList();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton BotonEliminar;
     private javax.swing.JButton CRUD;
     private javax.swing.JFrame CRUDFrame;
     private javax.swing.JButton CreandoLaptop;

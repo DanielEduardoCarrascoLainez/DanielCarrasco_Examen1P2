@@ -5,6 +5,7 @@
 package GuiAesthetic;
 
 import java.util.ArrayList;
+import java.util.Scanner;
 import javax.swing.DefaultComboBoxModel;
 
 /**
@@ -13,6 +14,7 @@ import javax.swing.DefaultComboBoxModel;
  */
 public class Main extends javax.swing.JFrame {
 ArrayList computadoras = new ArrayList();
+static Scanner lea = new Scanner(System.in);
     /**
      * Creates new form Main
      */
@@ -53,6 +55,7 @@ ArrayList computadoras = new ArrayList();
         BotonEliminar = new javax.swing.JButton();
         jComboBox1 = new javax.swing.JComboBox<>();
         jPanel1 = new javax.swing.JPanel();
+        jLabel7 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         MenuPanelPrincipal = new javax.swing.JPanel();
         MenuTextito = new javax.swing.JLabel();
@@ -227,15 +230,24 @@ ArrayList computadoras = new ArrayList();
 
         jPanel1.setBackground(new java.awt.Color(0, 0, 102));
 
+        jLabel7.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        jLabel7.setText("jLabel7");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 460, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGap(17, 17, 17)
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 114, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(329, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 349, Short.MAX_VALUE)
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(312, Short.MAX_VALUE))
         );
 
         CrearLaptop.addTab("Crear  PC Escritorio", jPanel1);
@@ -271,6 +283,11 @@ ArrayList computadoras = new ArrayList();
         jButton1.setBackground(new java.awt.Color(0, 91, 73));
         jButton1.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
         jButton1.setText("Ingresar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
         MenuPanelPrincipal.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 130, 154, 53));
 
         CRUD.setBackground(new java.awt.Color(0, 91, 73));
@@ -370,6 +387,59 @@ ArrayList computadoras = new ArrayList();
         jComboBox1.setModel(m);
     }//GEN-LAST:event_BotonEliminarMouseClicked
 
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        //EALE
+        System.out.println("ingrese el hostname deseado: ");
+        lea = new Scanner(System.in);
+        String hostname = lea.nextLine();
+        for (Object computadora : computadoras) {
+            if (((PC) (computadora)).getHosting().equals(hostname)) {
+                System.out.print(hostname + "#");
+
+                lea = new Scanner(System.in);
+                String comando = lea.nextLine();
+
+                if (comando.contains("ping_")) {
+                    String[] arrOfStr = comando.split("_", 2);
+                    for (Object computadoraa : computadoras) {
+                        if (((PC) (computadoraa)).getIp().equals(arrOfStr[1]) && ((PC) (computadoraa)).getMascara().equals(((PC) (computadora)).getMascara())) {
+                            System.out.println("Pinging to " + ((PC) (computadora)).getIp() + "with 32 bits of data:");
+                            for (int i = 0; i < 4; i++) {
+                                System.out.println("Reply from " + arrOfStr[1] + ": bytes=32 time=37ms TTL=46");
+                            }
+                            System.out.println("Ping statistics for " + arrOfStr[1]);
+                            System.out.println("     Packets: Sent = 4, Received = 4, Lost = 0 (0% loss)");
+                        } else if (((PC) (computadoraa)).getIp().equals(arrOfStr[1]) && !((PC) (computadoraa)).getMascara().equals(((PC) (computadora)).getMascara())) {
+                            System.out.println("Pinging to " + ((PC) (computadora)).getIp() + "with 32 bits of data:");
+                            for (int i = 0; i < 4; i++) {
+                                System.out.println("Reply from " + arrOfStr[1] + ": Destination host unreachable");
+                            }
+                            System.out.println("Ping statistics for " + arrOfStr[1]);
+                            System.out.println("     Packets: Sent = 4, Received = 0, Lost = 4 (100% loss)");
+                        }
+
+                        if (!((PC) (computadoraa)).getIp().equals(arrOfStr[1]) && !((PC) (computadoraa)).getMascara().equals(((PC) (computadora)).getMascara())) {
+                            System.out.println("Pinging to " + ((PC) (computadora)).getIp() + "with 32 bits of data:");
+                            for (int i = 0; i < 4; i++) {
+                                System.out.println("Request timed out");
+                            }
+                            System.out.println("Ping statistics for " + arrOfStr[1]);
+                            System.out.println("     Packets: Sent = 4, Received = 0, Lost = 4 (100% loss)");
+                        }
+                    }
+
+                    }else if (comando.contains("show")) {
+                     System.out.println(((PC) (computadora)).getIp()+ "    " + ((PC) (computadora)).getMascara());
+                } else {
+                    System.out.println("CONSOLE CLOSED");
+                    System.out.print(hostname + "#");
+
+                }
+
+                }
+            }
+    }//GEN-LAST:event_jButton1MouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -427,6 +497,7 @@ ArrayList computadoras = new ArrayList();
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;

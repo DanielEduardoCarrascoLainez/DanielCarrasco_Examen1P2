@@ -10,7 +10,7 @@ public class Escritorio extends PC{
     private String tipoAlmacenamiento;
     private boolean targetaGraf;
 
-    public Escritorio(String Ip, String Mascara, String hosting) {
+    public Escritorio(String Ip, String Mascara, String hosting, String capaRam, String capaAlm, String tipoAlm, boolean tarjetaG) {
         super(Ip, Mascara, hosting);
     }
 
